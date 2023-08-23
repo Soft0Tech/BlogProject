@@ -1,0 +1,13 @@
+.card{
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 5px;
+}
+li{
+    list-style-type: none;
+    cursor: pointer;
+    margin: 10px 0px;
+}
+ol{
+    padding: 0;
+}

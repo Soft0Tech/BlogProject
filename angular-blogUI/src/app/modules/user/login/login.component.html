@@ -1,0 +1,41 @@
+<div class="flex">
+    <div class="m-auto">
+
+
+        <mat-card class="example-card">
+            <form>
+            
+            <mat-card-title style="color:deeppink">Login</mat-card-title>
+            <mat-card-subtitle> input you youser name and password </mat-card-subtitle>
+            <mat-card-content class="m-auto">
+
+             <mat-form-field class="full-width">
+              <mat-label>User Name</mat-label>
+              <input matInput type="text" [(ngModel)]="user.username" [ngModelOptions]="{standalone: true}" placeholder="Enter your user name" required/>
+             </mat-form-field>
+
+             <mat-divider inset></mat-divider>
+
+             <mat-form-field class="full-width">
+              <mat-label>Password</mat-label>
+              <input matInput type="password"  [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}" required/>
+             </mat-form-field>
+
+                
+            </mat-card-content>
+            <mat-divider inset></mat-divider>
+            <mat-card-actions>
+              <button mat-flat-button (click)="login()" color="primary">
+              <span><mat-spinner diameter="35" *ngIf="isloading" color="warn"></mat-spinner></span>
+                <span *ngIf="!isloading">Login</span>
+            </button>
+              <a href="/user/register" mat-flat-button style="margin-left: 10px;" color="warn">Register</a>
+            </mat-card-actions>
+            <mat-card-footer>
+             
+            </mat-card-footer>
+        </form>
+        </mat-card>
+        
+    </div>
+</div>

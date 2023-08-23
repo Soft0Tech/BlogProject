@@ -1,0 +1,47 @@
+<div class="flex">
+    <div class="m-auto">
+        <mat-card color="primary">
+            <form #postForm="ngForm" (ngSubmit)="savePost(postForm)">
+                <mat-form-field class="full-width">
+                    <mat-label>Title</mat-label>
+                    <input type="text" matInput placeholder="Post Title here.." ngModel #title="ngModel" name="title" />
+                </mat-form-field>
+
+                <br />
+
+                <mat-form-field class="full-width">
+                    <mat-label>Post Body</mat-label>
+                    <textarea matInput rows="10" placeholder="Post content here ..." ngModel #content="ngModel"
+                        name="content">
+
+                     </textarea>
+                     
+                </mat-form-field>
+                <br />
+                <mat-form-field>
+                    <mat-label>Favorite food</mat-label>
+                    <mat-select ngModel #content="ngModel" name="category">
+                        <mat-option *ngFor="let cat of categoris" [value]="cat.value">
+                            {{cat.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <br />
+
+                <button type="button" mat-raised-button>
+                    <mat-icon>attach_file</mat-icon>
+                    Select post thumblain
+                </button>
+                <!-- <input hidden (change)="onFileSelected($event)" #fileInput type="file">
+            <span class="file-name">{{selectedFile?.name}}</span> -->
+
+
+                <br />
+                <button mat-button type="submit">Create post</button>
+            </form>
+        </mat-card>
+    </div>
+</div>
+
+
+<div [ngxSummernote]="config" (summernoteInit)="summernoteInit($event)"></div>

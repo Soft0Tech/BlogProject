@@ -1,0 +1,60 @@
+<div class="conatainer mt-5">
+    <div class="card">
+        <div class="d-flex justify-content-between p-3">
+            <div class="image">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg" width="90" alt="logo">
+            </div>
+            <div class="quize-header">
+                <h4 style="font-family:cursive;">Angular Typescript Quiz</h4>
+                <span style="font-style:italic;"> Welcome {{userName}}</span>
+            </div>
+        </div>
+        <div class="d-flex justify-content-between p-3">
+            <div class="score">
+                <h5>{{points}} points</h5>
+            </div>
+            <div class="question-remain">
+                <span>Quesiton {{currentQuestion+1}} of {{quesitonLenth}}</span>
+            </div>
+            <div class="timer">
+                {{counter}} sec ⏱️
+            </div>
+        </div>
+        <div class="progress mb-3">
+            <div class="progress-bar progress-bar-striped" role="progressbar" [ngStyle]="{'font-style': progress +'%'}" aria-valuemin="0" aria-valuemax="100">{{progress + ' %'}}</div>
+        </div>
+        <div class="question">
+            <div class="card">
+                <h3> {{questionList[currentQuestion]?.questionText}} </h3>
+            </div>
+        </div>
+        <div class="options">
+            <ol *ngFor="let op of questionList[currentQuestion]?.options">
+                <li (click)="checkAns(currentQuestion,op)">
+                    <div class="card">
+                        {{op.text}}
+                    </div>
+                </li>
+            </ol>
+        </div>
+        <div>
+            <p *ngIf="isShowSxplanation">{{questionList[currentQuestion]?.explanation}}</p>
+        </div>
+        <div class="d-flex justify-content-between">
+           <button class="btn" (click)="previousQuestion()"> ◀️ </button>
+           <button class="btn" (click)="isShowSxplanation=!isShowSxplanation"> 🔄 </button>
+           <button class="btn" (click)="nextQuestion()"> ▶️ </button>
+        </div>
+        <ng-container>
+            <div class="row d-flex justify-content-between">
+                <img style="width: 50%;" class="img-fluid col-sm-12 col-md-6" src="https://icon-library.com/images/celebration-icon-png/celebration-icon-png-7.jpg" alt="">
+                <div class="result text-center col-md-6 col-sm-12">
+                    <h1> Congratulation ! You have completed Quiz </h1>
+                    <p>Total Quiz : </p>
+                    <p>Total Currect : </p>
+                    <p>Total wrong : </p>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>
