@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/app/share/models';
-import { UserUrls } from '../../../share/urls.const'
+import { USER_URLS } from '../../../share/urls.const'
 import { DatePipe } from '@angular/common';
 
 @Component({
@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
     }else{
       usermodel.userName=this.user.username
     }
-    this.http.post(UserUrls.USER_LOGIN,usermodel).subscribe({
+    this.http.post(USER_URLS.USER_LOGIN,usermodel).subscribe({
       next:(res)=>{
         if(res){
           console.log(res)

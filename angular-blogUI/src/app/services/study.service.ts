@@ -13,11 +13,10 @@ export class StudyService {
   quizeByCategory(){
     return this.http.get<any>("assets/questions.json")
   }
-  createQuizes(){
-    
-    return this.http.get<any>("assets/questions.json")
-  }
-  editQuizes(){
-    return this.http.get<any>("assets/questions.json")
-  }
+  // createQuizes(){    
+  //   return this.http.get<any>("assets/questions.json")
+  // }
+  // editQuizes(){
+  //   return this.http.get<any>("assets/questions.json")
+  // }
 }

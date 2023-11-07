@@ -7,7 +7,7 @@ import { SinglebolgComponent } from './singlebolg/singlebolg.component';
 const routes: Routes = [
   {path:'',children:[
     { path:'',component:BlogComponent },
-    {path:'singleblog',component:SinglebolgComponent},
+    {path:'singleblog/:id',component:SinglebolgComponent},
     {path:'create',component:CreateblogComponent}
 ]}
 ];

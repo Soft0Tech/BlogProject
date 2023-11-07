@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { BlogUrls } from 'src/app/share/urls.const';
+import { BLOG_URLS } from 'src/app/share/urls.const';
 
 @Component({
   selector: 'app-createblog',
@@ -29,7 +29,7 @@ export class CreateblogComponent implements OnInit {
       userId:0,
     }
     console.log(postmodel)
-   this.http.post(BlogUrls.POST_BLOG,postmodel)
+   this.http.post(BLOG_URLS.POST_BLOG,postmodel)
   }
 
   config = {
